@@ -1,5 +1,9 @@
+const path = require('path');
+const parentDirectory = path.dirname(__dirname);
+
+
 module.exports = {
     getIndex: (req,res)=>{
-        res.render('index.ejs')
+        res.sendFile(parentDirectory + '/public/index.html')
     }
 }
