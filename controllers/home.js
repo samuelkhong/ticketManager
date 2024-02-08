@@ -1,9 +1,8 @@
 const path = require('path');
-const parentDirectory = path.dirname(__dirname);
 
 
 module.exports = {
-    getIndex: (req,res)=>{
-        res.sendFile(parentDirectory + '/public/index.html')
+    getIndex: (req,res) => {
+        res.render('qrTest.ejs', {user: req.user})
     }
 }

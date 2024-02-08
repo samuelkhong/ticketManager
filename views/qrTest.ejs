@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Ticket Sales</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <%- include('partials/navbar') %>
     <h1>Welcome to the Conference!</h1>
     <p>Get your tickets now!</p>
 
-    <button id='checkout' >Buy Ticket</button>
+    <button id='checkout' type="button" >Buy Ticket</button>
+
+    <img id="qr" src="#" alt="QR Code">
 
     <script src="js/script.js"></script>
 </body>
 </html>
+

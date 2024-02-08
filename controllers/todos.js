@@ -5,7 +5,7 @@ module.exports = {
         try{
             const todoItems = await Todo.find()
             const itemsLeft = await Todo.countDocuments({completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft})
+            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
             console.log(err)
         }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/authenticate/signup" method="post">
+        <div class="form-group">
+            <label for="userName">username</label>
+            <input id="userName" class="form-control" type="text" name="userName" value required="required">
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" class="form-control" type="text" name="email" value required="required">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" class="form-control" type="text" name="password" value required="required">
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Password</label>
+            <input id="confirmPassword" class="form-control" type="text" name="confirmPassword" value required="required">
+        </div>
+        <button type="submit" class="btn btn-default btn-block">Login</button>
+        <button type="reset" class="btn">Clear</button>
+
+    </form>
+
+    
+    
+</body>
+</html>

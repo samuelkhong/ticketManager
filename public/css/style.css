@@ -1,11 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-}
+    background: linear-gradient(to bottom, #a6c8fc 0%, #e1e5ea 100%);
+    background-attachment: fixed;
+  }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+#qr {
+    display: block;
+    margin-top: 10px; /* Adjust the margin as needed */
 }
