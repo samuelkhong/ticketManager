@@ -13,6 +13,8 @@ const homeRoutes = require('./routes/home');
 const todoRoutes = require('./routes/todos');
 const checkoutRoutes = require('./routes/checkout');
 const authenticateRoutes = require('./routes/authenticate');
+const testRoutes = require('./routes/test');
+const eventsRoutes = require('./routes/events');
 
 // used to access .env file
 require('dotenv').config({path: './config/.env'});
@@ -20,15 +22,15 @@ require('dotenv').config({path: './config/.env'});
 // Passport config  
 require("./config/passport")(passport);
 
-// connect to db
-connectDB()
-
 // // Setup Sessions - stored in MongoDB
 const sessionStore = MongoStore.create({
   mongoUrl: process.env.DB_STRING, 
   mongooseConnection: mongoose.connection,
   collectionName: 'sessions', // Specify the collection name if needed
 });
+
+// connect to db
+connectDB()
 
 // //Setup Sessions - stored in MongoDB
 app.use(
@@ -48,7 +50,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // set viewing engine to ejs
 app.set('view engine', 'ejs');
 
@@ -65,17 +66,13 @@ app.use(logger("dev"));
 //Use forms for put / delete
 app.use(methodOverride("_method"));
 
-
-
-
-
 // setup routes server is listening to
-app.use('/', homeRoutes)
-app.use('/todos', todoRoutes)
-app.use('/checkout', checkoutRoutes)
-app.use('/authenticate', authenticateRoutes)
-
-
+app.use('/', homeRoutes);
+app.use('/todos', todoRoutes);
+app.use('/checkout', checkoutRoutes);
+app.use('/authenticate', authenticateRoutes);
+app.use('/test', testRoutes);
+app.use('/events', eventsRoutes);
 
 //  check if connected to DB before starting our server
 mongoose.connection.once('open', () => {
