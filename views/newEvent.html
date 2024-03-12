@@ -3,41 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/newEvent/style.css">
+    <link rel="stylesheet" href="/todo-mvc/public/css/newEvent/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="wrapper">
-        <section>
-            <h1>New Event</h1>
+        <header>
+            <h1>Create a new Event</h1>
             <p>Fill the required info before saving</p>
             <hr>
-        </section>
+        </header>
 
-        <section class="background-info wrapper">
-            <label for="eventName"></label>
-            <input type="text" name="eventName" id="eventName" placeholder="Event name">
+        <div class="wrapper">
+            <form id="uploadForm" action="/test" enctype="multipart/form-data" method="POST">
+                <section class="wrapper">
+                    <p>Event Name</p>
+                    <label for="eventName"></label>
+                    <input type="text" name="eventName" id="eventName" placeholder="Event name">
 
-            <label for="user"></label>
-            <input type="text" name="user" id="user" placeholder="User">
+                    <p>User</p>
+                    <label for="user"></label>  
+                    <input type="text" name="user" id="user" placeholder="User">
+                    
+                    <p>Event Type</p>
+                    <label for="eventType"></label>
+                    <select name="eventType" id="eventType">
+                        <option value="online">Online</option>
+                        <option value="inPerson">In Person</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
 
-            <label for="eventType"></label>
-            <select>
-                <option value="online">Online</option>
-                <option value="inPerson">In Person</option>
-                <option value="hybrid">Hybrid</option>
-            </select>
+                    <p>Event Location</p>
+                    <label for="location"></label>
+                    <input type="text" name="location" id="location" 
+                    placeholder="Please enter the address of the location. Will be used in displaying
+                    the map on the event page">
 
-            <label for="location"></label>
-            <input type="text" name="location" id="location" placeholder="Location">
+                    <p>Date</p>
+                    <label for="date"></label>  
+                    <input type="date" name="eventDate" id="eventDate" placeholder="date">
 
-            <label for="date"></label>  
-            <input type="text" name="date" id="date" placeholder="date">
-        </section>
+
+                    <p>Event Image</p>
+                    <label for="eventImage"></label>
+                    <input type="file" name="image" id="eventImage" accept="image/*">
+                    
+                </section>
+
+                <section class="wrapper">
+                    <h2>Event Description</h2>
+                    <p>Add the event description </p>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+                </section>
+
+                <section class="wrapper">
+                    <h2>URls Configuration</h2>
+                    <p>Define where revelvant links should point</p>
+                    <div class="row">
+                        <div class="row-item">
+                            <p>Event Url</p>
+                            <p>https://localhost2121/event/ <span>
+                                <input type="text" name="eventUrl" id="eventUrl" placeholder="date">
+                            </span></p>
+                        </div>
+
+                        <div class="row-item">
+                            <p>Website Link</p>
+                                <input type="text" name="webLink" id="webLink" placeholder="date">
+                            </span></p>
+                            <p>Private Policy Url</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="row-item">
+                            <p>Term and Conditions</p>
+                                <input type="text" name="termsLink" id="termsLink" placeholder="date">
+                            </span></p>
+                        </div>
+                        <div class="row-item">
+                            <p>Private policy URL</p>
+                            <p>https:// <span>
+                                <input type="text" name="policyUrl" id="policyUrl" placeholder="date">
+                            </span></p>
+                        </div>
+                    </div>    
+                </section>
+
+                <input type="submit" value="send items"/>
+
+            </form>
+           
+                
+        </div>
 
 
     </div>
-    
-    
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar')%>
+    <h1> Events</h1>
+
+    <div class="wrapper">
+        <% events.forEach( el => { %>
+            <section class="card">
+                <img src="<%= el.image%>" alt="event picture">
+                <h2><%= el.number %></h2>
+                <p> <%= el.description %></p> 
+            </section>
+       <% }) %>
+    
+    </div>
+</body>
+</html>
